@@ -1,18 +1,19 @@
-class Student:
+import _thread
+from _thread import *
+from tkinter.tix import Tree
+class Brendan:
 
     count = 0
-    grade = 0
 
-    def __init__(self, name, grade) -> None:
-        self.grade = grade
-        self.name = name
+    def __init__(self, height, hair_color):
+        self.height = height
+        self.hair_color = hair_color
 
-        Student.count += 1
-        Student.grade += grade
+        Brendan.count += 1
 
 
     def get_info(self):
-        return f"{self.grade}, {self.name}"
+        return f"{self.height}, {self.hair_color}"
 
 
     @classmethod
@@ -20,13 +21,26 @@ class Student:
         return f"{cls.count}"
 
 
-    @classmethod
-    def get_grade(cls):
-        return f"{cls.grade}"
+
+student = Brendan(5, "black")
+
+print(student.get_info())
+print(Brendan.get_count())
 
 
 
-student1 = Student(97, "Patrick")
-student2 = Student(90,"Squidward")
+    
 
-print(Student.get_count())    
+class BrendansSon(Brendan):
+    def __init__(self, height, hair_color):
+        super().__init__()
+
+
+
+def x():
+    while True:
+        print("x")
+
+start_new_thread(x,())
+while True:
+    print("i")
